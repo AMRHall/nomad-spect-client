@@ -23,10 +23,12 @@ NO_SUBMIT
         const params = exp.params ? `PARAMETERS ${exp.params}` : ``
         const night = entry.night ? `NIGHT` : ``
         const priority = entry.priority ? `PRIORITY` : ``
+        const startTime = exp.startTime ? `START_TIME ${exp.startTime}` : ``
         submissionFile += `
 ${night}
 ${priority}
 EXPNO ${exp.expNo}
+${startTime}
 ${params}
 EXPERIMENT ${exp.paramSet}
 TITLE ${entry.title} || ${exp.expTitle}
