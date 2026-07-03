@@ -39,6 +39,8 @@ TITLE ${entry.title} || ${exp.expTitle}
 END`
 
     writeFileSync(submissionPath + uuidv4() + '-b', submissionFile)
+    //toremove
+    console.log('Submission Data:', submissionFile)
   } catch (error) {
     console.log(chalk.red('Client failed to write submission file', error))
   }
