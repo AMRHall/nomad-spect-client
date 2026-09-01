@@ -16,12 +16,14 @@ export const bookingString1 =
   '\n' +
   'EXPNO 10\n' +
   '\n' +
+  '\n' +
   'EXPERIMENT proton.a.and\n' +
   'TITLE booking test  || 1H Observe\n' +
   '\n' +
   '\n' +
   '\n' +
   'EXPNO 11\n' +
+  '\n' +
   '\n' +
   'EXPERIMENT c13_deptq.a.and\n' +
   'TITLE booking test  || 13C Observe with multiplicity editing - DEPTQ\n' +
@@ -39,6 +41,7 @@ export const bookingString2 =
   'NIGHT\n' +
   'PRIORITY\n' +
   'EXPNO 10\n' +
+  '\n' +
   'PARAMETERS ns,1600\n' +
   'EXPERIMENT c13_deptq.a.and\n' +
   'TITLE night test || 13C Observe with multiplicity editing - DEPTQ\n' +
