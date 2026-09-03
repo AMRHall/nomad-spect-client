@@ -12,12 +12,14 @@ export const bookExps = data => {
     let submissionFile = `USER ${dataObj[0].group}`
 
     dataObj.forEach(entry => {
+      //entries flagged with submit go straight into the queue and thus don't get NO_SUBMIT flag
+      const noSubmit = entry.submit ? `` : `NO_SUBMIT`
       submissionFile += `
 	
 HOLDER ${entry.holder}
 NAME ${entry.sampleId}
 SOLVENT ${entry.solvent}
-NO_SUBMIT
+${noSubmit}
 `
       entry.experiments.forEach(exp => {
         const params = exp.params ? `PARAMETERS ${exp.params}` : ``
@@ -39,8 +41,6 @@ TITLE ${entry.title} || ${exp.expTitle}
 END`
 
     writeFileSync(submissionPath + uuidv4() + '-b', submissionFile)
-    //toremove
-    console.log('Submission Data:', submissionFile)
   } catch (error) {
     console.log(chalk.red('Client failed to write submission file', error))
   }
